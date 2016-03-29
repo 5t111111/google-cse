@@ -23,7 +23,7 @@ module Google
         )
       end
 
-      def page_rank(site, link, page = 1)
+      def search_rank(site, link, page = 1)
         start = (page - 1) * 10 + 1
         result = client.execute(
           service.cse.list,
@@ -47,7 +47,7 @@ module Google
           end
         end
 
-        page_rank(site, link, page + 1) if has_next_page
+        search_rank(site, link, page + 1) if has_next_page
       end
 
       def index_count(site)
