@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in google-cse.gemspec
+# Specify your gem's dependencies in google-csene.gemspec
 gemspec

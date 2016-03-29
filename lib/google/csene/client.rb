@@ -1,11 +1,11 @@
 module Google
-  module CSE
+  module Csene
     class Client
       TOKEN_CREDENTIAL_URI = 'https://accounts.google.com/o/oauth2/token'
       AUDIENCE = 'https://accounts.google.com/o/oauth2/token'
       SCOPE = 'https://www.googleapis.com/auth/cse'
 
-      def initialize(application_name: 'google-cse',
+      def initialize(application_name: 'google-csene',
                      application_version: '1.0',
                      api_key:,
                      cse_id:)
