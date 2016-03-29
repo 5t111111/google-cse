@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class TestGoogle::SearchRank < Minitest::Test
+class TestGoogle::CSE < Minitest::Test
   def test_that_it_has_a_version_number
     refute_nil ::Google::SearchRank::VERSION
   end
