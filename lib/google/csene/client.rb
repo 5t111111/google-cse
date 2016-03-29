@@ -61,6 +61,18 @@ module Google
         result.data.search_information.total_results
       end
 
+      # seems working for the moment (maybe Google has stopped providing this?)
+      def backlink_count(site)
+        result = client.execute(
+          service.cse.list,
+          default_options.merge(
+            'q' => "link:#{site}"
+          )
+        )
+
+        result.data.search_information.total_results
+      end
+
       private
 
       def default_options
