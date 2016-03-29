@@ -1,17 +1,16 @@
-# coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'google/search_rank/version'
+require 'google/cse/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "google-search_rank"
-  spec.version       = Google::SearchRank::VERSION
-  spec.authors       = ["Masaki Komagata"]
+  spec.name          = "google-cse"
+  spec.version       = Google::CSE::VERSION
+  spec.authors       = ['Hirofumi Wakasugi']
   spec.email         = ["komagata@gmail.com"]
 
-  spec.summary       = %q{Easy to get to Google Search ranks.}
-  spec.description   = %q{Easy to get to Google Search rankgs.}
-  spec.homepage      = "https://github.com/komagata/google-search_rank"
+  spec.summary       = %q{Easy to get some Google CSE results including search ranks and index count.}
+  spec.description   = %q{Easy to get some Google CSE results including search ranks and index count.}
+  spec.homepage      = "https://github.com/5t111111/google-cse"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

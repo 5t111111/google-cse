@@ -1,24 +1,30 @@
-# Google::SearchRank
+# Google::CSE
 
-Easy to get to Google search ranks.
+Easy to get some Google CSE results including search ranks and index count.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'google-search_rank'
+gem 'google-cse'
 ```
 
 And then execute:
 
-    $ bundle
+``` text
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install google-search_rank
+``` text
+$ gem install google-cse
+```
 
 ## Usage
+
+__Getting Search ranks__
 
 ```ruby
 client = Google::SearchRank.new(api_key: "xxxx", cse_id: "xxxx")
@@ -33,8 +39,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/google-search_rank/fork )
+1. Fork it ( https://github.com/5t111111/google-cse/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Thanks
+
+[google-search_rank](https://github.com/komagata/google-search_rank)
