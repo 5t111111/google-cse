@@ -23,13 +23,13 @@ module Google
         )
       end
 
-      def search_rank(site, link, page = 1)
+      def search_rank(query, link, page = 1)
         start = (page - 1) * 10 + 1
         result = client.execute(
           service.cse.list,
           default_options.merge(
             'start' => start,
-            'q' => site
+            'q' => query
           )
         )
         queries = result.data.queries
@@ -39,7 +39,7 @@ module Google
         return 0 unless has_result
 
         result.data.items.each_with_index do |item, i|
-          # puts "start: #{start}, i: #{i} rank: #{start + i}, query: #{site}, link: #{item.link}"
+          # puts "start: #{start}, i: #{i} rank: #{start + i}, query: #{query}, link: #{item.link}"
           if item.link =~ link
             return start + i
           elsif item.link == link
@@ -47,15 +47,15 @@ module Google
           end
         end
 
-        search_rank(site, link, page + 1) if has_next_page
+        search_rank(query, link, page + 1) if has_next_page
       end
 
-      def highest_search_rank_site_url(link)
+      def highest_search_rank_site_url(query)
         result = client.execute(
           service.cse.list,
           default_options.merge(
             'start' => 1,
-            'q' => /.*/
+            'q' => query
           )
         )
 
