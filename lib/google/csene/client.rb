@@ -50,6 +50,18 @@ module Google
         search_rank(site, link, page + 1) if has_next_page
       end
 
+      def highest_search_rank_site_url(link)
+        result = client.execute(
+          service.cse.list,
+          default_options.merge(
+            'start' => 1,
+            'q' => /.*/
+          )
+        )
+
+        result.data.items.first.display_link
+      end
+
       def index_count(site)
         result = client.execute(
           service.cse.list,
