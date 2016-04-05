@@ -59,6 +59,7 @@ module Google
           )
         )
 
+        return nil if result.data.items.empty?
         result.data.items.first.display_link
       end
 
